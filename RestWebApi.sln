@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebApi", "RestWebApi\RestWebApi.csproj", "{4C19FE9C-62C0-4A69-813F-4DA8FBC276BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebApi.Demo", "RestWebApi.Demo\RestWebApi.Demo.csproj", "{8627FB13-0F1D-4A5C-B764-49142EC6281B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C19FE9C-62C0-4A69-813F-4DA8FBC276BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C19FE9C-62C0-4A69-813F-4DA8FBC276BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C19FE9C-62C0-4A69-813F-4DA8FBC276BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C19FE9C-62C0-4A69-813F-4DA8FBC276BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ED7855C-DC75-42DA-AA47-F7F12ED27387}
+	EndGlobalSection
+EndGlobal
