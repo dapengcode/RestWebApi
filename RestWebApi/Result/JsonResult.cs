@@ -88,6 +88,7 @@ namespace RestWebApi.Result
             try
             {
                 var json = JsonConvert.SerializeObject(this, new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" });
+                Trace.TraceInformation(json);
                 return json;
             }
             catch (Exception e)
@@ -125,10 +126,10 @@ namespace RestWebApi.Result
                 {
                     return "";
                 }
-                var index = Json.LastIndexOf("\"ServerTime\":\"", StringComparison.OrdinalIgnoreCase);
-                string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                //var index = Json.LastIndexOf("\"ServerTime\":\"", StringComparison.OrdinalIgnoreCase);
+                //string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                 ContentType = "application/json";
-                return Json.Substring(0, index + 13) + time + "}";
+                return Json;
             }
         }
 
