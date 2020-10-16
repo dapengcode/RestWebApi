@@ -12,6 +12,7 @@ using RestWebApi.Filters;
 using RestWebApi.OAuth;
 using RestWebApi.Request;
 using RestWebApi.Result;
+using RestWebApi.Sign;
 using RestWebApi.Tools;
 
 namespace RestWebApi
@@ -116,16 +117,16 @@ namespace RestWebApi
             {
                 if (_oauthUser != null) return _oauthUser;
                 var userToken = OAuths.GetAccessToken(this);
-                var sessionUser= OAuths.GetOAuthUserByAccessToken(this, userToken);
+                var sessionUser = OAuths.GetOAuthUserByAccessToken(this, userToken);
                 if (sessionUser == null)
                 {
                     OnInitUser();
-                } 
+                }
                 else
                 {
                     _oauthUser = sessionUser;
                 }
-                
+
                 return _oauthUser;
 
             }
@@ -259,7 +260,7 @@ namespace RestWebApi
             return SaveSession(r ?? ErrorResult(apiError));
 
         }
-
+        static readonly bool _NoSign = System.Configuration.ConfigurationManager.AppSettings["NoSign"] == "true";
         private async Task<object> ActionInvoker()
         {
             var action = ApiActionFactory.Get(this, ActionName, ActionVersion);
@@ -272,6 +273,22 @@ namespace RestWebApi
             ActionName = action.Name;
             ApiAction = action;
             //验证签名
+            if (action.HasFilter<SignAttribute>())
+            {
+                var signer = new Signer();
+                if (_NoSign == false)
+                {
+                    var ex =  signer.CheckAsync(this); //验证签名返回错误消息
+                    if (ex != null) //如果必须签名,则抛出异常
+                    {
+                        return ErrorResult(ex);
+                    }
+                }
+
+
+            }
+
+
             //是否启动Session
             var sessionState = SessionState;
             if (sessionState == ApiSessionState.Auto)
@@ -507,12 +524,12 @@ namespace RestWebApi
                 throw new ArgumentNullException(nameof(ex));
             }
             IApiResult result = null;
-            if (ex.HelpLink != null &&
-                ex.HelpLink.IndexOf("weitap.com", StringComparison.OrdinalIgnoreCase) >= 0)
+
+            if (ex.HelpLink != null)
             {
                 return new JsonResult(null) { ExceptionCode = (ExceptionCode)ex.HResult, Message = ex.Message };
             }
-            else if (ex is TargetInvocationException)
+            else if(ex is TargetInvocationException)
             {
                 return ErrorResult(ex.InnerException);
             }

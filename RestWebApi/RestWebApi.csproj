@@ -100,17 +100,18 @@
     <Compile Include="Session\DictionarySession.cs" />
     <Compile Include="Session\MemorySession.cs" />
     <Compile Include="Session\PropertyCollection.cs" />
+    <Compile Include="Sign\Signer.cs" />
     <Compile Include="Tools\EmptyTask.cs" />
     <Compile Include="WebApi.cs" />
     <Compile Include="WebApiBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="nuget.exe" />
     <Content Include="nuget.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="RestWebApi.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
