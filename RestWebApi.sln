@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebApi", "RestWebApi\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWebApi.Demo", "RestWebApi.Demo\RestWebApi.Demo.csproj", "{8627FB13-0F1D-4A5C-B764-49142EC6281B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{62537552-9E42-48C8-AEC5-90428F8CDEE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8627FB13-0F1D-4A5C-B764-49142EC6281B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62537552-9E42-48C8-AEC5-90428F8CDEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62537552-9E42-48C8-AEC5-90428F8CDEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62537552-9E42-48C8-AEC5-90428F8CDEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62537552-9E42-48C8-AEC5-90428F8CDEE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
