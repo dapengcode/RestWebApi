@@ -236,6 +236,11 @@ namespace RestWebApi
             }
             if (UrlReferrer != null) Trace.WriteLine(UrlReferrer.AbsoluteUri, "UrlReferrer");
             if (UserAgent != null) Trace.WriteLine(UserAgent, "UserAgent");
+            var headerKeys = RequestValues.Headers.AllKeys;
+            foreach (var key in headerKeys)
+            {
+                Trace.WriteLine(RequestValues.Headers[key], key);
+            }
         }
         internal void ResponseEnd(HttpResponseMessage response)
         {
